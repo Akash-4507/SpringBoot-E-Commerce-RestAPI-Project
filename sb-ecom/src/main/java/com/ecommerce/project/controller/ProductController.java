@@ -3,6 +3,7 @@ package com.ecommerce.project.controller;
 
 import com.ecommerce.project.model.Product;
 import com.ecommerce.project.payload.ProductDTO;
+import com.ecommerce.project.payload.ProductResponse;
 import com.ecommerce.project.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,4 +23,21 @@ public class ProductController {
             return new ResponseEntity<>(productDTO, HttpStatus.CREATED);
     }
 
+    @GetMapping("/public/products")
+    public ResponseEntity<ProductResponse> getAllProducts() {
+        ProductResponse productResponse=productService.getallProducts();
+        return new ResponseEntity<>(productResponse, HttpStatus.OK);
+    }
+
+    @GetMapping("/public/categories/{categoryId}/product")
+    public ResponseEntity<ProductResponse> getAllProductsByCategory(@PathVariable Long categoryId) {
+        ProductResponse productResponse=productService.getProductsByCategory(categoryId);
+        return new ResponseEntity<>(productResponse, HttpStatus.FOUND);
+    }
+
+    @GetMapping("/public/products/{productKeyword}")
+    public ResponseEntity<ProductResponse> getAllProductsByKeyword(@PathVariable String productKeyword) {
+        ProductResponse productResponse=productService.getProductsBykeyword(productKeyword);
+        return new ResponseEntity<>(productResponse, HttpStatus.FOUND);
+    }
 }
