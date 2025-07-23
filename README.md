@@ -38,7 +38,6 @@ This project is suitable for production-ready backend setups and demonstrates in
 - 🛒 Cart and Order Processing
 - 📊 Role-Based Access Control (RBAC)
 - 🔄 CRUD Operations for all major entities
-- 📄 API Documentation using Swagger
 - 📬 Testing with Postman
 - 🔌 Layered structure (Controller, Service, Repository)
 
@@ -139,4 +138,19 @@ You can test the APIs using:
 ---
 
 ✅ You're now ready to test and build on top of your backend!
+
+🧩 Future Enhancements
+
+📬 Email notifications for orders
+
+🌐 Deployment on AWS/GCP
+
+💳 Payment gateway simulation (Stripe/Razorpay)
+
+📈 Admin dashboard with analytics
+
+👨‍💻 Contributor
+Akash A – Java Backend Developer
+“Building scalable backend solutions using Java, Spring Boot, and REST architecture.”
+
 
